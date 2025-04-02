@@ -2,16 +2,10 @@ extends layout
 
 block content
   h1= title
-  p Hello My Name is #{title}
-  button(type="button", class="btn btn-secondary" onclick="faster()") Sample Button
-  div(id="faster") add in extra
-  a(href="/lumber") Search Link
-  script. 
-    let value = 1;
-    let amt = 2;
-    function faster(){
-      amt = amt * 2;
-      value = value + amt;
-      console.log(value);
-      document.getElementById("faster").innerHTML = "Faster " + value + " times " + amt;
-    }
+  - var image_names = ["differentstackedwood.jpg","fivewoodstack.jpg", "lumberyard.jpg", "singlelumber.jpg", "threelumber.jpg"]
+  - console.log(index)
+  - for(let i=0; i<3; i++){
+    - var index = Math.floor(Math.random()*5)
+    - var image = image_names[index]
+    img(src = `/images/`+ image alt=image width=300 height=300)
+  - }
