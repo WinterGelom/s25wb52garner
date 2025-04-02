@@ -2,4 +2,8 @@ extends layout
 
 block content
   h1= title
-  
+  - var results = [["lumber_type = Cedar", "cost = 10", "length = 5"], ["lumber_type = pine", "cost = 15", "length = 10"],["lumber_type = Hardwood", "cost = 5", "length = 20"]]
+  div(class = "container-fluid")
+    div(class = "row")
+      each item in results 
+        div(class="col-sm-2") #{item}
